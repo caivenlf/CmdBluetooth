@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="eDZ-Bs-Iyv">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="gQZ-6f-XmA">
+            <objects>
+                <viewController id="eDZ-Bs-Iyv" customClass="ViewController" customModule="CmdBluetooth" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QX2-9C-MU1"/>
+                        <viewControllerLayoutGuide type="bottom" id="cm4-6l-3U5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wwz-51-jyk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cDd-Lh-NMM">
+                                <rect key="frame" x="0.0" y="444" width="375" height="223"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="eDZ-Bs-Iyv" id="mFq-Gs-Jl1"/>
+                                    <outlet property="delegate" destination="eDZ-Bs-Iyv" id="wnJ-Wu-47h"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ekg-6J-QbP">
+                                <rect key="frame" x="0.0" y="399" width="375" height="45"/>
+                                <color key="backgroundColor" red="0.36864123380000002" green="0.58126183710000001" blue="0.46746527980000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="BBD-To-FW0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Scan">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="startScan:" destination="eDZ-Bs-Iyv" eventType="touchUpInside" id="20f-mD-gfq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OWR-AW-zVY">
+                                <rect key="frame" x="0.0" y="38" width="375" height="45"/>
+                                <color key="backgroundColor" red="0.36864123380000002" green="0.58126183710000001" blue="0.46746527980000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="Gu3-NM-KhO"/>
+                                </constraints>
+                                <state key="normal" title="SynTime">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="synTime:" destination="eDZ-Bs-Iyv" eventType="touchUpInside" id="VVp-VH-8mP"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="cm4-6l-3U5" firstAttribute="top" secondItem="cDd-Lh-NMM" secondAttribute="bottom" id="2Qb-ci-YZk"/>
+                            <constraint firstItem="cDd-Lh-NMM" firstAttribute="leading" secondItem="wwz-51-jyk" secondAttribute="leading" id="6A1-YR-SB6"/>
+                            <constraint firstAttribute="trailing" secondItem="cDd-Lh-NMM" secondAttribute="trailing" id="IIZ-Uu-bp7"/>
+                            <constraint firstItem="cDd-Lh-NMM" firstAttribute="height" secondItem="wwz-51-jyk" secondAttribute="height" multiplier="223:667" id="Qh0-Ak-tA2"/>
+                            <constraint firstItem="Ekg-6J-QbP" firstAttribute="leading" secondItem="wwz-51-jyk" secondAttribute="leading" id="V90-EI-Qcs"/>
+                            <constraint firstAttribute="trailing" secondItem="Ekg-6J-QbP" secondAttribute="trailing" id="cyc-0S-3hv"/>
+                            <constraint firstItem="OWR-AW-zVY" firstAttribute="top" secondItem="QX2-9C-MU1" secondAttribute="bottom" constant="18" id="hma-HI-TUm"/>
+                            <constraint firstItem="OWR-AW-zVY" firstAttribute="leading" secondItem="wwz-51-jyk" secondAttribute="leading" id="mx2-aV-7Oe"/>
+                            <constraint firstItem="cDd-Lh-NMM" firstAttribute="top" secondItem="Ekg-6J-QbP" secondAttribute="bottom" id="pTN-PX-gp4"/>
+                            <constraint firstAttribute="trailing" secondItem="OWR-AW-zVY" secondAttribute="trailing" id="udV-43-Bbm"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="bleTbl" destination="cDd-Lh-NMM" id="gLA-ei-JBL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QTF-P4-504" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="291.5" y="267.5"/>
+        </scene>
+    </scenes>
+</document>
